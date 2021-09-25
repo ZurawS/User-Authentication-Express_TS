@@ -1,9 +1,9 @@
-import { NextFunction, Request, Response, Router } from "express";
-import { get } from "./decorators/routes";
+import { NextFunction, Request, Response } from "express";
+import { controller, get, use } from "./decorators";
 
-@controller("/")
+@controller("/auth")
 class LoginController {
-  @(get("/login")``)
+  @get("/login")
   getLogin(req: Request, res: Response): void {
     {
       res.send(`
